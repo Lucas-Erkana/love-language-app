@@ -7,42 +7,52 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>❤️ Love Language Quiz</h1>
+  <div id="page">
+    <div class="container">
+      <h1>❤️ Love Language Quiz</h1>
 
-    <!-- Instructions Section -->
-    <div id="instructions">
-      <p>Welcome to the Five Love Languages Test! 🎯</p>
-      <ul>
-        <li>You will see 30 questions.</li>
-        <li>Each question has two choices. Pick the one that best describes you.</li>
-        <li>After you choose an option, the next question will automatically load.</li>
-        <li>A 15-minute timer starts when the quiz begins.</li>
-        <li>Your results will be shown when you're done or when time runs out.</li>
-      </ul>
-      <button onclick="startQuiz()" class="start-btn">Start Quiz</button>
-    </div>
-
-    <!-- Timer -->
-    <div id="top-bar" class="hidden">
-      <div id="timer">15:00</div>
-      <div id="controls">
-        <button id="pause-btn" onclick="togglePause()">⏸ Pause</button>
-        <button id="quit-btn" onclick="quitQuiz()">🚪 Quit</button>
+      <!-- Instructions Section -->
+      <div id="instructions">
+        <p>Welcome to the Five Love Languages Test! 🎯</p>
+        <ul>
+          <li>You will see 30 questions.</li>
+          <li>Each question has two choices. Pick the one that best describes you.</li>
+          <li>After you choose an option, the next question will automatically load.</li>
+          <li>A 15-minute timer starts when the quiz begins.</li>
+          <li>Your results will be shown when you're done or when time runs out.</li>
+        </ul>
+        <button onclick="startQuiz()" class="start-btn">Start Quiz</button>
       </div>
+
+      <!-- Timer -->
+      <div id="top-bar" class="hidden">
+        <div id="timer">15:00</div>
+        <div id="controls">
+          <button id="pause-btn" onclick="togglePause()">⏸ Pause</button>
+          <button id="quit-btn" onclick="quitQuiz()">🚪 Quit</button>
+        </div>
+      </div>
+
+      <!-- Quiz Section -->
+      <div id="quiz-container" class="hidden"></div>
+
+      <!-- Result Section -->
+      <div id="result-container" class="hidden"></div>
     </div>
-    
-      
 
-    <!-- Quiz Section -->
-    <div id="quiz-container" class="hidden"></div>
-
-    <!-- Result Section -->
-    <div id="result-container" class="hidden"></div>
+    <footer class="footer">
+      <p>
+        Built with ❤️ by 
+        <a href="https://lucaserkana.vercel.app/" target="_blank" rel="noopener noreferrer">
+          Lucas Erkana
+        </a>
+      </p>
+    </footer>
   </div>
 
   <script src="js/questions.js"></script>
   <script src="js/result.js"></script>
   <script src="js/quiz.js"></script>
 </body>
+
 </html>

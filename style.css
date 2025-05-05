@@ -116,4 +116,39 @@
   #controls button:hover {
     background-color: #ec407a;
   }
+  .footer {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+    color: #555;
+    padding: 1rem;
+  }
+  .footer {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: auto;
+    padding: 1rem 0;
+    background-color: #ffe3ea;
+    border-top: 2px solid #f48fb1;
+    width: 100%;
+  }
+  
+  .footer a {
+    color: #3d48ad;
+    text-decoration: none;
+  }
+  
+  .footer a:hover {
+    text-decoration: underline;
+  }
+  
+  @media screen and (max-width: 480px) {
+    .footer {
+      font-size: 0.95rem;
+    }
+  }
+  
+  
   
