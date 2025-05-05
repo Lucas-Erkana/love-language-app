@@ -49,19 +49,14 @@ function showResults() {
   `;
 }
 
-function startTimer() {
-  const timerDisplay = document.getElementById("timer");
-  const interval = setInterval(() => {
-    const minutes = Math.floor(timerSeconds / 60);
-    const seconds = timerSeconds % 60;
-    timerDisplay.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-    timerSeconds--;
-
-    if (timerSeconds < 0) {
-      clearInterval(interval);
-      showResults();
-    }
-  }, 1000);
-}
+function startQuiz() {
+    document.getElementById("instructions").classList.add("hidden");
+    document.getElementById("quiz-container").classList.remove("hidden");
+    document.getElementById("timer").classList.remove("hidden");
+  
+    showQuestion();
+    startTimer();
+  }
+  
 
 window.onload = startQuiz;
