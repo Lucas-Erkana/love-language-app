@@ -4,6 +4,7 @@ let timerSeconds = 15 * 60;
 let timerInterval;
 let paused = false;
 
+// DOM Elements
 const quizContainer = document.getElementById("quiz-container");
 const resultContainer = document.getElementById("result-container");
 const timerDisplay = document.getElementById("timer");
@@ -63,7 +64,7 @@ function startQuiz() {
 }
 
 function startTimer() {
-  clearInterval(timerInterval);
+  clearInterval(timerInterval); // clear any existing interval
   timerInterval = setInterval(() => {
     if (!paused) {
       const minutes = Math.floor(timerSeconds / 60);
@@ -109,10 +110,11 @@ function resetState() {
   timerDisplay.textContent = "15:00";
 }
 
-// Show instruction page on load
-window.onload = () => {
+// Show instruction screen on load
+document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("instructions").classList.remove("hidden");
-  quizContainer.classList.add("hidden");
-  resultContainer.classList.add("hidden");
-  topBar.classList.add("hidden");
-};
+  document.getElementById("quiz-container").classList.add("hidden");
+  document.getElementById("result-container").classList.add("hidden");
+  document.getElementById("top-bar").classList.add("hidden");
+});
+
