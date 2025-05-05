@@ -24,7 +24,14 @@
     </div>
 
     <!-- Timer -->
-    <div id="timer" class="hidden">15:00</div>
+    <div id="top-bar" class="hidden">
+        <div id="timer">15:00</div>
+        <div id="controls">
+          <button id="pause-btn" onclick="togglePause()">⏸ Pause</button>
+          <button id="quit-btn" onclick="quitQuiz()">🚪 Quit</button>
+        </div>
+      </div>
+      
 
     <!-- Quiz Section -->
     <div id="quiz-container" class="hidden"></div>
