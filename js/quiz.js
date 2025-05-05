@@ -4,11 +4,7 @@ let timerSeconds = 15 * 60;
 
 const quizContainer = document.getElementById("quiz-container");
 const resultContainer = document.getElementById("result-container");
-
-function startQuiz() {
-  showQuestion();
-  startTimer();
-}
+const timerDisplay = document.getElementById("timer");
 
 function showQuestion() {
   if (currentQuestion >= questions.length) {
@@ -50,13 +46,32 @@ function showResults() {
 }
 
 function startQuiz() {
-    document.getElementById("instructions").classList.add("hidden");
-    document.getElementById("quiz-container").classList.remove("hidden");
-    document.getElementById("timer").classList.remove("hidden");
-  
-    showQuestion();
-    startTimer();
-  }
-  
+  document.getElementById("instructions").classList.add("hidden");
+  quizContainer.classList.remove("hidden");
+  timerDisplay.classList.remove("hidden");
 
-window.onload = startQuiz;
+  showQuestion();
+  startTimer();
+}
+
+function startTimer() {
+  const interval = setInterval(() => {
+    const minutes = Math.floor(timerSeconds / 60);
+    const seconds = timerSeconds % 60;
+    timerDisplay.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    timerSeconds--;
+
+    if (timerSeconds < 0) {
+      clearInterval(interval);
+      showResults();
+    }
+  }, 1000);
+}
+
+// Show instruction page on load
+window.onload = () => {
+  document.getElementById("instructions").classList.remove("hidden");
+  quizContainer.classList.add("hidden");
+  resultContainer.classList.add("hidden");
+  timerDisplay.classList.add("hidden");
+};
