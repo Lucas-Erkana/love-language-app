@@ -9,8 +9,27 @@
 <body>
   <div class="container">
     <h1>❤️ Love Language Quiz</h1>
-    <div id="timer">15:00</div>
-    <div id="quiz-container"></div>
+
+    <!-- Instructions Section -->
+    <div id="instructions">
+      <p>Welcome to the Five Love Languages Test! 🎯</p>
+      <ul>
+        <li>You will see 30 questions.</li>
+        <li>Each question has two choices. Pick the one that best describes you.</li>
+        <li>After you choose an option, the next question will automatically load.</li>
+        <li>A 15-minute timer starts when the quiz begins.</li>
+        <li>Your results will be shown when you're done or when time runs out.</li>
+      </ul>
+      <button onclick="startQuiz()" class="start-btn">Start Quiz</button>
+    </div>
+
+    <!-- Timer -->
+    <div id="timer" class="hidden">15:00</div>
+
+    <!-- Quiz Section -->
+    <div id="quiz-container" class="hidden"></div>
+
+    <!-- Result Section -->
     <div id="result-container" class="hidden"></div>
   </div>
 
